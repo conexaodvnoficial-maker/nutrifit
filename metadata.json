@@ -1,0 +1,6 @@
+{
+  "name": "eBook Receitas Fitness",
+  "description": "Landing page premium, moderna e otimizada para a venda de eBook de receitas fitness com alta conversão.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
