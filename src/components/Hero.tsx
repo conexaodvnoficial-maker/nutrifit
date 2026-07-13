@@ -18,16 +18,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
           {/* Left Column: Copy & Value Proposition */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             
-            {/* Tag Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/20"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span className="font-poppins font-medium text-xs tracking-wider uppercase">Lançamento Exclusivo 2026</span>
-            </motion.div>
+
 
             {/* Main Title */}
             <motion.h1

@@ -22,7 +22,7 @@ import Footer from "./components/Footer";
 import LivePurchaseNotifier from "./components/LivePurchaseNotifier";
 
 // CONFIGURAÇÃO DO CHECKOUT - Substitua facilmente por seu link real da Kiwify ou outra plataforma
-const KIWIFY_CHECKOUT_URL = "https://pay.kiwify.com.br/xxxxx"; 
+const KIWIFY_CHECKOUT_URL = "https://pay.kiwify.com.br/fSj6vn2"; 
 
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
