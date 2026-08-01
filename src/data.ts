@@ -337,35 +337,31 @@ export const BENEFITS: BenefitItem[] = [
 export const FAQS: FAQItem[] = [
   {
     id: "faq-1",
-    question: "Como eu recebo o eBook?",
-    answer: "O envio é 100% automático. Assim que o pagamento for aprovado pela plataforma de pagamento (como Kiwify), você receberá um e-mail com o link de download exclusivo para acessar o material imediatamente."
+    question: "Como recebo?",
+    answer: "O envio é 100% digital e automático. Assim que a sua compra for confirmada pela Kiwify, você receberá o link de acesso imediatamente no seu e-mail."
   },
   {
     id: "faq-2",
-    question: "O pagamento é seguro?",
-    answer: "Sim, absolutamente. Todo o processamento de pagamento é realizado de forma criptografada por meio de plataformas líderes de mercado (como Kiwify), garantindo total privacidade e segurança para seus dados bancários e cartões."
+    question: "Preciso pagar mensalidade?",
+    answer: "Não. Você paga apenas R$ 19,90 uma única vez e tem acesso vitalício a todas as receitas do NutriFit, sem nenhuma mensalidade ou taxa adicional."
   },
   {
     id: "faq-3",
     question: "Posso acessar pelo celular?",
-    answer: "Sim! O eBook foi desenvolvido e diagramado com foco na portabilidade. O arquivo em PDF premium se adapta perfeitamente a celulares, tablets, notebooks e computadores convencionais."
+    answer: "Sim! O guia digital foi diagramado e otimizado para celulares, tablets e notebooks, permitindo que você consulte as receitas na cozinha com toda a praticidade."
   },
   {
     id: "faq-4",
-    question: "Consigo imprimir o eBook de receitas?",
-    answer: "Com certeza. O formato PDF de alta resolução permite que você imprima o material em tamanho folha A4 completa ou no formato que preferir para ter o livro físico na bancada da sua cozinha."
+    question: "As receitas são fáceis?",
+    answer: "Sim. Todas as receitas foram pensadas para a rotina do dia a dia, com passo a passo claro, preparos rápidos e ingredientes acessíveis encontrados em qualquer mercado."
   },
   {
     id: "faq-5",
-    question: "Preciso comprar ingredientes caros ou raros?",
-    answer: "Não! Esse é um dos maiores diferenciais do nosso eBook. Todas as receitas foram elaboradas com ingredientes fáceis e acessíveis, que você encontra em feiras livres e mercados comuns, sem estourar seu orçamento mensal."
-  },
-  {
-    id: "faq-6",
-    question: "O eBook ensina os macros e calorias de cada prato?",
-    answer: "Sim! Cada uma das mais de 150 receitas acompanha a contagem precisa de Calorias totais por porção, além dos macronutrientes divididos em Proteínas, Carboidratos e Gorduras, facilitando o encaixe na sua dieta atual."
+    question: "Como funciona a garantia?",
+    answer: "Você tem 7 dias de garantia incondicional. Se por qualquer motivo sentir que o conteúdo não atendeu às suas expectativas, basta solicitar o reembolso que devolveremos 100% do seu dinheiro."
   }
 ];
+
 
 export const INITIAL_TESTIMONIALS: TestimonialItem[] = [
   {

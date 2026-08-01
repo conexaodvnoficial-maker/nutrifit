@@ -11,6 +11,7 @@ import BookPreviewer from "./components/BookPreviewer";
 import ConversionCalculator from "./components/ConversionCalculator";
 import Categories from "./components/Categories";
 import Gallery from "./components/Gallery";
+import VideoSection from "./components/VideoSection";
 import Bonuses from "./components/Bonuses";
 import DietQuiz from "./components/DietQuiz";
 import Benefits from "./components/Benefits";
@@ -108,6 +109,9 @@ export default function App() {
 
       {/* 6. Gallery Section (Recipe Carousels and Full interactive Lightbox details) */}
       <Gallery />
+
+      {/* Video UGC Demonstration Section */}
+      <VideoSection />
 
       {/* 7. Extra Bonuses Section (Planner, Shopping List, Food prep schedule) */}
       <Bonuses />

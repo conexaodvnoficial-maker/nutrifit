@@ -8,24 +8,24 @@ export default function Gallery() {
   const [selectedRecipe, setSelectedRecipe] = useState<RecipeItem | null>(null);
   const [filterCategory, setFilterCategory] = useState<string>("Todas");
 
-  const categories = ["Todas", "Café da Manhã", "Almoço", "Lanches Práticos", "Sobremesas Saudáveis", "Sucos & Bebidas"];
+  const categories = ["Todas", "Café da Manhã", "Almoço", "Jantar", "Lanches", "Sobremesas"];
 
   const filteredRecipes = filterCategory === "Todas"
     ? RECIPES
     : RECIPES.filter(recipe => recipe.category.toLowerCase().includes(filterCategory.split(" ")[0].toLowerCase()));
 
   return (
-    <section id="galeria" className="py-20 lg:py-28 bg-white">
+    <section id="galeria" className="py-20 lg:py-28 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">Degustação Grátis</span>
-          <h2 className="font-poppins font-extrabold text-3xl sm:text-4xl text-brand-dark leading-tight">
-            Dê uma espiada no que espera por você
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-green">Prova Visual</span>
+          <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+            Refeições reais, bonitas e apetitosas
           </h2>
-          <p className="text-gray-500 font-sans text-base">
-            Clique em qualquer um dos pratos abaixo para visualizar a ficha técnica completa, lista de ingredientes e macros. Experimente a qualidade da nossa diagramação antes de comprar:
+          <p className="text-slate-600 font-sans text-base">
+            Navegue pelas categorias abaixo e confira o aspecto das nossas receitas para cada momento do seu dia. Clique em qualquer prato para ver ingredientes e modo de preparo:
           </p>
         </div>
 
@@ -35,10 +35,10 @@ export default function Gallery() {
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-poppins font-semibold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-poppins font-semibold transition-all cursor-pointer ${
                 filterCategory === cat
-                  ? "bg-brand-green text-white shadow-md shadow-green-500/10"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-brand-green text-white shadow-md shadow-brand-green/20"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
               {cat}
@@ -49,36 +49,36 @@ export default function Gallery() {
         {/* Recipes Grid / Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredRecipes.map((recipe, index) => (
+            {filteredRecipes.map((recipe) => (
               <motion.div
                 key={recipe.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setSelectedRecipe(recipe)}
-                className="group bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-200 transition-all duration-300 cursor-pointer flex flex-col h-full"
+                className="group bg-slate-50/70 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300 cursor-pointer flex flex-col h-full"
               >
                 {/* Image Wrap */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <img
                     src={recipe.imageUrl}
                     alt={recipe.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                   
                   {/* Category Tag */}
-                  <span className="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                     {recipe.category}
                   </span>
 
                   {/* Hover icon indicator */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="bg-brand-green text-white font-poppins font-bold text-xs px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                      <Eye className="w-4 h-4" /> Ver Receita Completa
+                    <span className="bg-brand-green text-white font-poppins font-semibold text-xs px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                      <Eye className="w-4 h-4" /> Ver Receita
                     </span>
                   </div>
                 </div>
@@ -86,17 +86,17 @@ export default function Gallery() {
                 {/* Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <h3 className="font-poppins font-bold text-lg text-brand-dark group-hover:text-brand-green transition-colors leading-snug">
+                    <h3 className="font-poppins font-bold text-lg text-slate-900 group-hover:text-brand-green transition-colors leading-snug">
                       {recipe.title}
                     </h3>
                     
                     {/* Specs strip */}
-                    <div className="flex gap-4 text-xs text-gray-500 font-sans">
+                    <div className="flex gap-4 text-xs text-slate-500 font-sans">
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-gray-400" /> {recipe.prepTime}
+                        <Clock className="w-3.5 h-3.5 text-slate-400" /> {recipe.prepTime}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Flame className="w-3.5 h-3.5 text-gray-400" /> {recipe.calories}
+                        <Flame className="w-3.5 h-3.5 text-slate-400" /> {recipe.calories}
                       </span>
                     </div>
                   </div>

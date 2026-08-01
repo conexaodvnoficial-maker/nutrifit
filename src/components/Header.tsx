@@ -79,38 +79,20 @@ export default function Header({ checkoutUrl }: HeaderProps) {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <button 
-                onClick={() => scrollToSection("desafios")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
-              >
-                Desafios
-              </button>
-              <button 
-                onClick={() => scrollToSection("beneficios")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
-              >
-                Benefícios
-              </button>
-              <button 
-                onClick={() => scrollToSection("categorias")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
-              >
-                O que Inclui
-              </button>
-              <button 
                 onClick={() => scrollToSection("galeria")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
+                className="text-sm font-medium text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors cursor-pointer"
               >
                 Receitas
               </button>
               <button 
-                onClick={() => scrollToSection("depoimentos")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
+                onClick={() => scrollToSection("para-quem-e")} 
+                className="text-sm font-medium text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors cursor-pointer"
               >
-                Avaliações
+                Benefícios
               </button>
               <button 
                 onClick={() => scrollToSection("faq")} 
-                className="text-sm font-medium text-gray-600 hover:text-brand-green dark:text-gray-300 dark:hover:text-brand-green transition-colors cursor-pointer"
+                className="text-sm font-medium text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors cursor-pointer"
               >
                 FAQ
               </button>
@@ -122,9 +104,9 @@ export default function Header({ checkoutUrl }: HeaderProps) {
                 href={checkoutUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-brand-orange text-white font-poppins font-semibold text-sm shadow-sm hover:bg-brand-orange-hover hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 group cursor-pointer"
+                className="px-5 py-2.5 rounded-xl bg-brand-green text-white font-poppins font-semibold text-sm shadow-sm hover:bg-emerald-600 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 group cursor-pointer"
               >
-                Comprar Agora
+                Acessar Agora
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
@@ -154,49 +136,31 @@ export default function Header({ checkoutUrl }: HeaderProps) {
             className="fixed inset-x-0 top-[60px] z-30 md:hidden bg-white/95 dark:bg-brand-dark/95 backdrop-blur-lg border-b border-gray-100 dark:border-white/5 shadow-lg p-6 flex flex-col gap-4"
           >
             <button 
-              onClick={() => scrollToSection("desafios")} 
-              className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
-            >
-              Desafios
-            </button>
-            <button 
-              onClick={() => scrollToSection("beneficios")} 
-              className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
-            >
-              Benefícios
-            </button>
-            <button 
-              onClick={() => scrollToSection("categorias")} 
-              className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
-            >
-              O que Inclui
-            </button>
-            <button 
               onClick={() => scrollToSection("galeria")} 
               className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
             >
               Receitas
             </button>
             <button 
-              onClick={() => scrollToSection("depoimentos")} 
+              onClick={() => scrollToSection("para-quem-e")} 
               className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
             >
-              Avaliações
+              Benefícios
             </button>
             <button 
               onClick={() => scrollToSection("faq")} 
               className="text-left py-2 font-medium text-gray-800 dark:text-gray-200 hover:text-brand-green transition-colors"
             >
-              Perguntas Frequentes
+              FAQ
             </button>
 
             <a
               href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center py-3.5 rounded-xl bg-brand-orange text-white font-poppins font-semibold shadow-md hover:bg-brand-orange-hover transition-colors flex items-center justify-center gap-2 mt-2"
+              className="w-full text-center py-3.5 rounded-xl bg-brand-green text-white font-poppins font-semibold shadow-md hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 mt-2"
             >
-              Comprar Agora
+              Acessar Agora
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>

@@ -1,58 +1,76 @@
-import { BENEFITS } from "../data";
-import { Zap, FileText, Smartphone, Grid, CheckCircle2, RefreshCw } from "lucide-react";
+import { UtensilsCrossed, Clock, ChefHat, CalendarCheck, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 
-const iconMap: Record<string, any> = {
-  Zap: Zap,
-  FileText: FileText,
-  Smartphone: Smartphone,
-  Grid: Grid,
-  CheckCircle2: CheckCircle2,
-  RefreshCw: RefreshCw
-};
-
 export default function Benefits() {
+  const audiences = [
+    {
+      title: "Quem quer variar a alimentação",
+      description: "Cansado de comer sempre as mesmas coisas? Tenha mais de 150 opções saborosas ao seu alcance para nunca enjoar da sua dieta.",
+      icon: UtensilsCrossed
+    },
+    {
+      title: "Quem busca praticidade",
+      description: "Ideal para quem tem a rotina corrida, precisa de preparos rápidos em até 20 minutos e ingredientes fáceis do mercado local.",
+      icon: Clock
+    },
+    {
+      title: "Quem gosta de cozinhar",
+      description: "Descubra novas combinações, técnicas saudáveis e truques culinários para explorar todo o sabor da comida de verdade.",
+      icon: ChefHat
+    },
+    {
+      title: "Quem deseja organizar melhor as refeições",
+      description: "Planeje seus dias com clareza com um cardápio completo dividido por café da manhã, almoço, jantar, lanches e sobremesas.",
+      icon: CalendarCheck
+    }
+  ];
+
   return (
-    <section id="beneficios" className="py-20 lg:py-28 bg-white border-b border-gray-100">
+    <section id="para-quem-e" className="py-20 lg:py-28 bg-slate-50/70 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Diferenciais Premium</span>
-          <h2 className="font-poppins font-extrabold text-3xl sm:text-4xl text-brand-dark leading-tight">
-            Por que escolher o nosso Guia de Receitas?
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-green">
+            Para quem é
+          </span>
+          <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+            Feito para se adaptar ao seu estilo de vida
           </h2>
-          <p className="text-gray-500 font-sans text-base">
-            Garantimos uma experiência de leitura premium e prática, desenhada especificamente para se encaixar na sua rotina corrida com total segurança:
+          <p className="text-slate-600 font-sans text-base">
+            O NutriFit foi desenvolvido para resolver as principais dúvidas e desafios da alimentação no dia a dia:
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BENEFITS.map((benefit, index) => {
-            const IconComponent = iconMap[benefit.iconName] || CheckCircle2;
+        {/* Audience 4-Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {audiences.map((item, index) => {
+            const IconComp = item.icon;
             return (
               <motion.div
-                key={benefit.id}
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300 flex items-start gap-4 group"
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300 flex flex-col justify-between group"
               >
-                {/* Icon Circle */}
-                <div className="p-3 rounded-xl bg-brand-green/10 text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300 shrink-0">
-                  <IconComponent className="w-5 h-5" />
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-brand-green/10 text-brand-green group-hover:bg-brand-green group-hover:text-white flex items-center justify-center transition-all duration-300 mb-6">
+                    <IconComp className="w-7 h-7" />
+                  </div>
+
+                  <h3 className="font-poppins font-bold text-xl text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
 
-                {/* Text content */}
-                <div className="space-y-1">
-                  <h3 className="font-poppins font-bold text-base text-brand-dark group-hover:text-brand-green transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                    {benefit.description}
-                  </p>
+                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-brand-green">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Recomendado para o seu dia a dia</span>
                 </div>
               </motion.div>
             );
@@ -63,3 +81,4 @@ export default function Benefits() {
     </section>
   );
 }
+
